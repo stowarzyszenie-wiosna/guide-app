@@ -14,7 +14,7 @@ class Scenario(models.Model):
 
 
 class Group(models.Model):
-    scenario = models.ForeignKey(Scenario, related_name='steps')
+    scenario = models.ForeignKey(Scenario, related_name='groups')
     site_url = models.URLField(max_length=200)
 
 

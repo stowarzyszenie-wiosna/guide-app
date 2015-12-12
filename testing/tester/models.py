@@ -6,7 +6,7 @@ from django.db import models
 
 
 class Tester(models.Model):
-	id = models.AutoField(primary_key=True)
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-	hash = models.CharField(max_length=30)
+    id = models.AutoField(primary_key=True)
+    first_name = models.CharField(max_length=64)
+    last_name = models.CharField(max_length=64)
+    hash = models.CharField(max_length=64)

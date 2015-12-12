@@ -15,14 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from rest_framework import routers
-from scenario.views import *
+from scenario import views
 
-router = routers.DefaultRouter()
-router.register(r'scenario', ScenarioViewSet)
+api_urlpatterns = [
+    url(r'scenarios/(?P<scenario_pk>[0-9]+)/$', views.scenario_detail),
+    url(r'scenarios/(?P<scenario_pk>[0-9]+)/groups/(?P<site_url>.+)/$', views.group_detail),
+]
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/', include(router.urls)),
+    url(r'^api/', include(api_urlpatterns)),
 ]

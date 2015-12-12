@@ -5,3 +5,7 @@ from scenario.models import *
 @admin.register(Scenario)
 class ScenarioAdmin(admin.ModelAdmin):
     pass
+
+@admin.register(Step)
+class StepAdmin(admin.ModelAdmin):
+    pass

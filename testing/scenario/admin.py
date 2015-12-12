@@ -1,3 +1,7 @@
 from django.contrib import admin
+from scenario.models import *
 
-# Register your models here.
+
+@admin.register(Scenario)
+class ScenarioAdmin(admin.ModelAdmin):
+    pass

@@ -3,6 +3,8 @@ from scenario.models import *
 
 
 class StepSerializer(serializers.ModelSerializer):
+    type = serializers.ChoiceField(choices=STEP_TYPES)
+
     class Meta:
         model = Step
         fields = ('id', 'position', 'type', 'message', 'options')

@@ -5,16 +5,20 @@ from scenario.models import *
 class StepSerializer(serializers.ModelSerializer):
     class Meta:
         model = Step
-        fields = ('id', 'content')
+        fields = ('id', 'position', 'type', 'message', 'options')
 
 
 class GroupSerializer(serializers.ModelSerializer):
+    steps = StepSerializer(many=True)
+
     class Meta:
         model = Group
-        fields = ('id', 'site_url')
+        fields = ('id', 'site_url', 'steps')
 
 
 class ScenarioSerializer(serializers.ModelSerializer):
+    groups = GroupSerializer(many=True)
+
     class Meta:
         model = Scenario
-        fields = ('id', 'name', 'site_url', 'created')
+        fields = ('id', 'name', 'created', 'groups')

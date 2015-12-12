@@ -52,3 +52,5 @@ $RECYCLE.BIN/
 [Ss]cripts
 pyvenv.cfg
 pip-selfcheck.json
+
+*.swp

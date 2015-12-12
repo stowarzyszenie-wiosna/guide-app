@@ -23,4 +23,5 @@ class Step(models.Model):
     position = models.PositiveIntegerField()
     type = models.IntegerField(choices=STEP_TYPES)
     message = models.CharField(max_length=1000)
+    error_message = models.CharField(max_length=1000)
     options = models.CharField(max_length=500, blank=True, null=True)

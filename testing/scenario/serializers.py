@@ -7,7 +7,7 @@ class StepSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Step
-        fields = ('id', 'position', 'type', 'message', 'options')
+        fields = ('id', 'position', 'type', 'message', 'error_message', 'options')
 
 
 class GroupSerializer(serializers.ModelSerializer):

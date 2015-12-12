@@ -17,8 +17,6 @@ class GroupSerializer(serializers.ModelSerializer):
 
 
 class ScenarioSerializer(serializers.ModelSerializer):
-    groups = GroupSerializer(many=True)
-
     class Meta:
         model = Scenario
-        fields = ('id', 'name', 'created', 'groups')
+        fields = ('id', 'name', 'created')

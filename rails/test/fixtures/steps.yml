@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  message: MyText
+  error_message: MyText
+  options: MyText
+  step_type: 1
+  group_id: 
+
+two:
+  message: MyText
+  error_message: MyText
+  options: MyText
+  step_type: 1
+  group_id: 

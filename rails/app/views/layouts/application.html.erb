@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide-App Szlachetnej Paczki</title>
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  <a href="#Top"></a>
+</head>
+<body style="width:80%;margin: 0 auto">
+  <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to "Guide-App Szlachetnej Paczki", "/", :class => "navbar-brand" %>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li><%= link_to "Scenarios", scenarios_path %></li>
+          <li><%= link_to "Groups", groups_path %></li>
+          <li><%= link_to "Steps", steps_path  %></li>
+        </ul>
+      </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+  </div><!-- /.navbar -->
+
+  <% if current_page?(root_path) %>
+    <% if content_for?(:jumbotron) %>
+      <div class="jumbotron">
+        <div class="container">
+          <%= yield :jumbotron %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="container">
+  <% end %>
+  <%= yield %>
+  <footer>
+    <hr>
+      <p class="pull-right">
+        <%= link_to '<span class="glyphicon-class glyphicon glyphicon-chevron-up"></span> Back to top'.html_safe, '#Top' %>
+      </p>
+      <p>
+        &copy; <%= Time.now.year %> Guide-App Szlachetnej Paczki
+        &bull;
+        <%= link_to "Privacy", root_path %></li>
+        &bull;
+        <%= link_to "Terms", root_path %></li>
+      </p>
+    </footer>
+  </div> <!-- /container -->
+  <script id="info-window" type="text/x-handlebars-template">
+      <div class="guide-app">
+          <div class="guide-app-box">
+            <div class="guide-app-subcontrol guide-app-fold">
+              <i class="fa fa-circle"></i>
+            </div>
+            <div class="guide-app-subcontrol guide-app-prev">
+              {{{prev-button}}}
+            </div>
+            <div class="guide-app-text" style="width: 80%;">
+              {{text}}
+            </div>
+            <div class="guide-app-decision">
+              {{{info-window-continue-button}}}
+            </div>
+            <div class="guide-app-subcontrol guide-app-next">
+              {{{next-button}}}
+            </div>
+            <div class="guide-app-pagination">
+              {{curr_step}} z {{tot_steps}}
+            </div>
+          </div>
+        </div>
+    </script>
+    <script id="waiting-window" type="text/x-handlebars-template">
+        <div class="guide-app">
+          <div class="guide-app-box">
+            <div class="guide-app-subcontrol guide-app-fold">
+              <i class="fa fa-circle"></i>
+            </div>
+            <div class="guide-app-subcontrol guide-app-prev">
+              {{{prev-button}}}
+            </div>
+            <div class="guide-app-text">
+              {{text}}
+            </div>
+            <div class="guide-app-decision">
+              {{{waiting-window-waiting-icon}}}
+            </div>
+            <div class="guide-app-subcontrol guide-app-next">
+              {{{next-button}}}
+            </div>
+            <div class="guide-app-pagination">
+              {{curr_step}} z {{tot_steps}}
+            </div>
+          </div>
+        </div>
+    </script>
+    <script id="yesorno-window" type="text/x-handlebars-template">
+        <div class="guide-app">
+          <div class="guide-app-box">
+            <div class="guide-app-subcontrol guide-app-fold">
+              <i class="fa fa-circle"></i>
+            </div>
+            <div class="guide-app-subcontrol guide-app-prev">
+              {{{prev-button}}}
+            </div>
+            <div class="guide-app-text">
+              {{text}}
+            </div>
+            <div class="guide-app-decision">
+              {{{yesorno-window-yes-button}}}
+              {{{yesorno-window-no-button}}}
+            </div>
+            <div class="guide-app-subcontrol guide-app-next">
+              {{{next-button}}}
+            </div>
+            <div class="guide-app-pagination">
+              {{curr_step}} z {{tot_steps}}
+            </div>
+          </div>
+        </div>
+    </script>
+    <script id="error-window" type="text/x-handlebars-template">
+        <div class="guide-app guide-app-error">
+          <div class="guide-app-box">
+            <div class="guide-app-subcontrol guide-app-fold">
+              <i class="fa fa-circle"></i>
+            </div>
+            <div class="guide-app-subcontrol guide-app-prev">
+              {{{prev-button}}}
+            </div>
+            <div class="guide-app-text" style="width: 75%">
+              {{text}}
+            </div>
+            <div class="guide-app-decision">
+              {{{error-window-next-button}}}
+            </div>
+            <div class="guide-app-subcontrol guide-app-next">
+              {{{next-button}}}
+            </div>
+          </div>
+        </div>
+    </script>
+    <script id="rating-window" type="text/x-handlebars-template">
+        <div class="guide-app">
+          <div class="guide-app-box">
+            <div class="guide-app-subcontrol guide-app-fold">
+              <i class="fa fa-circle"></i>
+            </div>
+            <div class="guide-app-subcontrol guide-app-prev">
+              <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="guide-app-text">
+              {{text}}
+            </div>
+            <div class="guide-app-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <div class="guide-app-subcontrol guide-app-next">
+              <i class="fa fa-angle-right"></i>
+            </div>
+            <div class="guide-app-pagination">
+              {{curr_step}} z {{tot_steps}}
+            </div>
+          </div>
+        </div>
+    </script>
+</body>
+</html>

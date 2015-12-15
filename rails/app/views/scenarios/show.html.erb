@@ -1,0 +1,63 @@
+<%- model_class = Scenario -%>
+<div class="page-header">
+  <h1>
+    Edit <%= @scenario.name %> <%=t '.title', :default => model_class.model_name.human.titleize %>
+  </h1>
+</div>
+
+<% @groups.each do |group| %>
+<div class="group-container">
+  <div class="left-aligned">
+    <h3>Steps for: <%= group.site_url %></h3>
+  </div>
+  <div class="right-aligned">
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+    edit_group_path(group), :class => 'btn btn-default' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+    group_path(group),
+    :method => :delete,
+    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+    :class => 'btn btn-default btn-danger' %>
+    <a class="btn btn-default custom-show-steps">Show Steps</a>
+  </div>
+  <ul class="steps-ul">
+    <% @steps[group.id].each do |step| %>
+    <ul>
+      <li><%= link_to step.message, step_path(step) %></li>
+      <li><%= step_type(step.step_type) %></li>
+      <li style="text-align: right">
+        <%= link_to t('.edit', :default => t("helpers.links.edit")),
+        edit_step_path(step), :class => 'btn btn-default btn-xs' %>
+        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+        edit_group_path(group),
+        :method => :delete,
+        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+        :class => 'btn btn-xs btn-danger' %>
+      </li>
+    </ul>
+    <% end %>
+    <ul style="text-align: right">
+      <li>
+      <%= link_to new_step_path, :class => 'btn btn-default btn-xs' do %>
+        <i class="fa fa-plus"></i> New Step
+      <% end %>
+      </li>
+    </ul>
+  </ul>
+</div>
+<% end %>
+<br />
+<%= link_to new_group_path, :class => 'btn btn-default btn-xs' do %>
+<i class="fa fa-plus"></i> New Group
+<% end %>
+
+<br /> <br />
+<%= link_to t('.back', :default => t("helpers.links.back")),
+scenarios_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+edit_scenario_path(@scenario), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+scenario_path(@scenario),
+:method => 'delete',
+:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+:class => 'btn btn-danger' %>

@@ -1,0 +1,56 @@
+// Place all the styles related to the Groups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul#group-headers-ul li,
+ul.groups-ul li,
+ul.steps-ul li {
+  display: inline-block;
+  width: 33%;
+  margin-bottom: 0.5em;
+}
+
+.groups-ul
+{
+	/*border-top: 2px solid white*/
+	padding-top: 15px;
+}
+
+.groups-ul li:first-child a
+{
+	font-size:22px;
+}
+#group-headers-ul
+{
+	/*border-bottom: 1px solid white;*/
+}
+.steps-ul
+{
+	background-color: #4E5D6C;
+	border-radius: 10px;
+}
+.form-group .col-lg-offset-2
+{
+	margin:0;
+}
+.form-group
+{
+	margin-top:10px;
+}
+.group-container
+{
+	background-color: #4E5D6C;
+	margin-top: 20px;
+	padding: 10px 25px;
+	border-radius: 10px;
+}
+
+.right-aligned {
+  display: inline-block;
+  float: right;
+}
+
+.left-aligned {
+  display: inline-block;
+  text-align: left;
+}

@@ -1,0 +1,69 @@
+swagger: '2.0'
+info:
+  title: WIOSNA Guide app
+  description: Application for remote tutorials and manual testing 
+  version: 1.0.0
+host: api.uber.com
+schemes:
+  - https
+  - http
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /scenario/subpage/steps:
+    get:
+      parameters:
+        - name: scenario unique hash
+          in: query
+          description: scenario unique hash
+          required: true
+          type: string
+          format: string
+        - name: subpage path
+          in: query
+          description: subpage path
+          required: true
+          type: string
+          format: string
+      responses:
+        '200':
+          description: An array of steps for selected scenario and subpage
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Step'
+definitions:
+  Scenario:
+    type: object
+    properties:
+      scenario_id:
+        type: integer
+        description: 'Unique identifier'
+      hash:
+        type: string
+        description: 'Unique hash as scenario trigger'
+      name:
+        type: string
+        description: Display name of scenario.
+  Subpage:
+    type: object
+    properties:
+      subpage_id:
+        type: integer
+        description: 'Unique identifier'
+      path:
+        type: string
+        description: 'Path part of url'
+      name:
+        type: string
+        description: Display name of scenario.
+  Step:
+    type: object
+    properties:
+      step_id:
+        type: integer
+      'type':
+        type: string
+      'parameters':
+        type: object

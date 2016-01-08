@@ -1,0 +1,4 @@
+/vendor/
+composer.lock
+src/public_html/assets/components
+db

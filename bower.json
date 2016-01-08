@@ -1,0 +1,25 @@
+{
+  "name": "stowarzyszenie-wiosna/guide-app",
+  "version": "1.0.0",
+  "homepage": "https://github.com/stowarzyszenie-wiosna/guide-app",
+  "authors": [
+    "Michal Raczka <michal.raczka@wiosna.org.pl>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars": "~4.0.5"
+  }
+}

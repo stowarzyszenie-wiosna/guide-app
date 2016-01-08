@@ -1,0 +1,149 @@
+.guide-app {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;  
+  z-index: 9999;
+}
+
+.guide-app-box {
+  background-color: #E3F2FD;
+  width: 570px;
+  padding: 20px 30px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.guide-app-icon {
+  display: inline-block;
+  font-size: 2em !important;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  padding-top: 3px;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.guide-app-icon:hover {
+    background-color: #eee;
+}
+
+.guide-app-decision {
+  float: right;
+  margin-top: -5px;
+}
+
+.guide-app-true {
+  color: #0A820E;
+  font-size: 1.8em !important;
+}
+
+.guide-app-false {
+  color: #AD0202;
+  font-size: 1.8em !important;
+  padding-left: 6px;
+  padding-right: 2px;
+}
+
+.guide-app-continue {
+  color: #0A820E;
+  font-size: 2.3em !important;
+  padding-left: 14px;
+  padding-right: 2px;
+  padding-top: 0;
+  line-height: .65em;
+  width: 32px;
+}
+
+.guide-app-interaction {
+  color: black;
+  font-size: 2em;
+  padding-left: 8px;
+  padding-right: 2px;
+  line-height: 1.05em;
+  width: 30px;
+  background: none;
+}
+
+.guide-app-rating {
+  color: #C8CF0A;
+  float: right;
+  margin-top: 6px;
+}
+
+.guide-app-text {
+  width: 70%;
+  display: inline-block;
+  color: #000;
+}
+
+.guide-app-subcontrol {
+  background-color: #2196F3;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.guide-app-fold {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  position: absolute;
+  text-align: center;
+  background-color: #BBDEFB;
+  cursor: move;
+}
+
+.guide-app-fold .fa {
+  font-size: .1em;
+  line-height: .1em;
+  margin-top: -4px;
+}
+
+.guide-app-next,
+.guide-app-prev {
+  width: 10px;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  bottom: 0;
+}
+
+.guide-app-next:hover,
+.guide-app-prev:hover {
+    background-color: #2180CC;
+}
+
+.guide-app-next {
+  left: auto;
+  right: 0;
+}
+
+.guide-app-next .fa,
+.guide-app-prev .fa {
+  margin-top: 20px;
+  margin-left: 2px;
+}
+
+.guide-app-error .guide-app-box {
+  background-color: #FFCDD2;
+}
+
+.guide-app-error .guide-app-fold {
+  background-color: #FFCDD2;
+}
+
+.guide-app-error .guide-app-subcontrol {
+  background-color: #EF5350;
+}
+
+.guide-app-pagination {
+    float: left;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+}

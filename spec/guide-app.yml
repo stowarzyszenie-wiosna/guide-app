@@ -14,15 +14,15 @@ paths:
   /scenario/subpage/steps:
     get:
       parameters:
-        - name: scenario unique hash
+        - name: scenario_hash
           in: query
           description: scenario unique hash
           required: true
           type: string
           format: string
-        - name: subpage path
+        - name: subpage_path
           in: query
-          description: subpage path
+          description: subpage_path
           required: true
           type: string
           format: string

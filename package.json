@@ -1,0 +1,21 @@
+{
+  "name": "guide-app",
+  "version": "1.0.0",
+  "description": "Web application to create tutorial or testing scenario for any website.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stowarzyszenie-wiosna/guide-app.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stowarzyszenie-wiosna/guide-app/issues"
+  },
+  "homepage": "https://github.com/stowarzyszenie-wiosna/guide-app#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
